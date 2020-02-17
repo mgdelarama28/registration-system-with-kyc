@@ -25,5 +25,9 @@ Route::namespace('Admin')->name('admin.')->prefix('admin')->group(function() {
 		});
 
 		Route::get('/', 'DashboardController@index')->name('dashboard');
+		// Route::get('/activity_logs', function() {
+		// 	return view('admin.pages.activity_logs');
+		// })->name('activity_logs');
+		Route::get('/activity_logs', 'ActivityLogController@index')->name('activity_logs');
 	});
 });

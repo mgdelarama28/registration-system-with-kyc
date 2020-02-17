@@ -5,10 +5,11 @@ namespace App\Models\Users;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Admin extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +23,8 @@ class Admin extends Authenticatable
         'profile_picture_path',
         'password',
     ];
+
+    protected static $logFillable = true;
 
     /**
      * The attributes that should be hidden for arrays.
