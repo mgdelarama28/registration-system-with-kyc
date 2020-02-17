@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('admin.includes.head')
+@include('admin.includes.meta-tags')
+
 @include('admin.includes.styles')
 
 <body class="hold-transition sidebar-mini">
@@ -9,7 +10,7 @@
 
         @include('admin.includes.sidebar')
 
-        @include('admin.includes.content')
+        @yield('content')
 
         @include('admin.includes.footer')
     </div>
