@@ -5,11 +5,12 @@ namespace App\Models\Users;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Admin extends Authenticatable
 {
-    use Notifiable, LogsActivity;
+    use Notifiable, HasRoles, LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -62,10 +63,10 @@ class Admin extends Authenticatable
 
     public function renderProfilePicture()
     {
-        $path = 'storage/default_images/no_image.jpg';
+        $path = asset('storage/default_images/no-image.png');
 
         if ($this->profile_picture_path){
-            $path = 'storage/' . $this->profile_picture_path;
+            $path = asset('storage/' . $this->profile_picture_path);
         }
 
         return $path;
@@ -73,6 +74,6 @@ class Admin extends Authenticatable
 
     public function renderEmail()
     {
-        return $this->email();
+        return $this->email;
     }
 }
