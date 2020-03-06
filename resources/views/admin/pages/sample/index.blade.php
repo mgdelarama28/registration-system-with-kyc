@@ -59,10 +59,7 @@
 														<td>
 															<a href="{{ route('admin.samples.show', $sample->id) }}" class="btn btn-primary"><i class="far fa-eye"></i></a>
 															<a href="{{ route('admin.samples.edit', $sample->id) }}" class="btn btn-primary"><i class="far fa-edit"></i></a>
-															{{-- <a href="javascript:void(0)" data-action="{{ route('admin.samples.destroy', $sample->id) }}" data-message="Are you sure you want to delete this sample?" class="btn__delete btn btn-danger deleteBtn">
-																<i class="far fa-trash-alt"></i> --}}
 															<a href="{{ route('admin.samples.destroy', $sample->id) }}" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
-															</a>															
 														</td>
 													</tr>
 						            			@endforeach

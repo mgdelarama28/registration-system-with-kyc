@@ -43,6 +43,7 @@
 						            				<th>ID</th>
 						            				<th>Name</th>
 						            				<th>Date Created</th>
+						            				<th>Actions</th>
 						            			</tr>
 						            		</thead>
 
@@ -52,6 +53,10 @@
 														<td>{{ $role->id }}</td>
 														<td>{{ $role->name }}</td>
 														<td>{{ $role->created_at }}</td>
+														<td>
+															<a href="{{ route('admin.roles.edit', $role->id) }}" class="btn btn-primary"><i class="far fa-edit"></i></a>
+															<a href="{{ route('admin.roles.destroy', $role->id) }}" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+														</td>
 													</tr>
 						            			@endforeach
 						            		</tbody>

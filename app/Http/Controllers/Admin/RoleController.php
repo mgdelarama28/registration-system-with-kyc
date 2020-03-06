@@ -40,7 +40,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $vars = $request->except(['_token']);
+
+        \DB::beginTransaction();
+            Role::create($vars);
+        \DB::commit();
+
+        return redirect(route('admin.roles.index'));
     }
 
     /**
@@ -51,11 +57,7 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        $role = Role::find($id);
-
-        return view('admin.pages.roles.show', [
-        	'role' => $role,
-        ]);
+        //
     }
 
     /**
@@ -66,7 +68,11 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role = Role::findOrfail($id);
+
+        return view('admin.pages.roles.edit', [
+            'role' => $role,
+        ]);
     }
 
     /**
@@ -89,6 +95,10 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $role = Role::findOrfail($id);
+
+        $role->delete();
+
+        return redirect(route('admin.roles.index'));
     }
 }

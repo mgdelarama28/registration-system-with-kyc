@@ -66,9 +66,9 @@
 
 	                            			<div class="row">
 												<div class="col-md-1">
-	                            				<div class="form-group">
-	                            					<button class="btn btn-primary form-control">Submit</button>
-	                            				</div>
+		                            				<div class="form-group">
+		                            					<button class="btn btn-primary form-control">Submit</button>
+		                            				</div>
 	                            				</div>
 	                            			</div>
 	                            		</form>
