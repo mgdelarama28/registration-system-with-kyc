@@ -46,16 +46,6 @@ class Admin extends Authenticatable
     ];
 
     /** Renders */
-    public function renderFirstName()
-    {
-        return $this->first_name;
-    }
-
-    public function renderLastName()
-    {
-        return $this->last_name;
-    }
-
     public function renderFullName()
     {
         return $this->first_name . ' ' . $this->last_name;
@@ -70,10 +60,5 @@ class Admin extends Authenticatable
         }
 
         return $path;
-    }
-
-    public function renderEmail()
-    {
-        return $this->email;
     }
 }

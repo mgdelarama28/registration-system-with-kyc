@@ -53,14 +53,18 @@
 														<td>{{ $admin->id }}</td>
 														<td>
 															<img src="{{ $admin->renderProfilePicture() }}" alt="Admin Avatar" height="100px" width="100px">
-															{{-- {{ $admin->renderProfilePicture() }} --}}
 														</td>
 														<td>{{ $admin->renderFullName() }}</td>
-														<td>{{ $admin->renderEmail() }}</td>
+														<td>{{ $admin->email }}</td>
 														<td>Super Admin</td>
 														<td>
-															<a href="" class="btn btn-primary"><i class="far fa-edit"></i></a>
-															<button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+															@can('admins.edit')
+																<a href="" class="btn btn-primary"><i class="far fa-edit"></i></a>
+															@endcan
+
+															@can('admins.destroy')
+																<button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+															@endcan
 														</td>
 													</tr>
 						            			@endforeach

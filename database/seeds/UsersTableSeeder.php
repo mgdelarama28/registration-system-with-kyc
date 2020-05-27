@@ -1,6 +1,6 @@
 <?php
 
-use App\User;
+use App\Models\Users\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -9,9 +9,9 @@ class UsersTableSeeder extends Seeder
 {
 	protected $users = [
 		[
-			'first_name' => 'App',
-			'last_name' => 'Admin',
-			'email' => 'admin@admin.com',
+			'first_name' => 'Sample',
+			'last_name' => 'User',
+			'email' => 'sample_user@gmail.com',
 			'password' => 'password',
 		],
 	];
@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
 
         DB::beginTransaction();
 
-	        $this->command->info('Seeding Admin Users...');
+	        $this->command->info('Seeding Users...');
 
 	        foreach ($this->users as $key => $user) {
 	        	$vars = [

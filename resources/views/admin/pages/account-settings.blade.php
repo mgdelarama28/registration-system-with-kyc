@@ -46,21 +46,21 @@
 	                            				<div class="col-md-6">
 	                            					<div class="form-group">
 				                                        <label for="first_name">First Name</label>
-				                                        <input name="first_name" type="text" class="form-control" id="first_name" placeholder="First Name" value="{{ $user->renderFirstName() }}" required>
+				                                        <input name="first_name" type="text" class="form-control" id="first_name" placeholder="First Name" value="{{ $user->first_name }}" required>
 				                                    </div>
 	                            				</div>
 
 	                            				<div class="col-md-6">
 	                            					<div class="form-group">
 				                                        <label for="last_name">Last Name</label>
-				                                        <input name="last_name" type="text" class="form-control" id="last_name" placeholder="Last Name" value="{{ $user->renderLastName() }}" required>
+				                                        <input name="last_name" type="text" class="form-control" id="last_name" placeholder="Last Name" value="{{ $user->last_name }}" required>
 				                                    </div>
 	                            				</div>
 
 	                            				<div class="col-md-6">
 	                            					<div class="form-group">
 				                                        <label for="email">Email</label>
-				                                        <input name="email" type="email" class="form-control" id="email" placeholder="Email" value="{{ $user->renderEmail() }}" required>
+				                                        <input name="email" type="email" class="form-control" id="email" placeholder="Email" value="{{ $user->email }}" required>
 				                                    </div>
 	                            				</div>
 	                            			</div>
@@ -132,5 +132,4 @@
 			});
 		});
 	</script>
-@endsection
 @endsection

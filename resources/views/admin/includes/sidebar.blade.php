@@ -55,11 +55,20 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.users.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            User Management
+                        </p>
+                    </a>
+                </li>
                 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shield-alt"></i>
-                        <p>Access Control<i class="right fas fa-angle-left"></i></p>
+                        <p>Admin Management<i class="right fas fa-angle-left"></i></p>
                     </a>
 
                     <ul class="nav nav-treeview">
@@ -73,14 +82,7 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.roles.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-id-card"></i>
-                                <p>Roles</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{ route('admin.permissions.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-pencil-alt"></i>
-                                <p>Permissions</p>
+                                <p>Roles & Permissions</p>
                             </a>
                         </li>
                     </ul>
