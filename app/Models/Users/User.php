@@ -49,10 +49,10 @@ class User extends Authenticatable
 
     public function renderProfilePicture()
     {
-        $path = 'storage/default_images/no_image.jpg';
+        $path = asset('storage/default_images/no-image.png');
 
         if ($this->profile_picture_path){
-            $path = 'storage/' . $this->profile_picture_path;
+            $path = asset('storage/' . $this->profile_picture_path);
         }
 
         return $path;
