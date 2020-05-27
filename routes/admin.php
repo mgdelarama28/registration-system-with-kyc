@@ -48,6 +48,10 @@ Route::namespace('Admin')->name('admin.')->prefix('admin')->group(function() {
 		Route::get('roles/{id}/edit', 'RoleController@edit')->name('roles.edit');
 		Route::get('/roles/{id}/destroy', 'RoleController@destroy')->name('roles.destroy');
 
+		/** Users */
+		Route::get('/users', 'UserController@index')->name('users.index');
+		Route::get('/users/{id}', 'UserController@show')->name('users.show');
+
 		Route::post('/roles', 'RoleController@store')->name('roles.store');
 		Route::post('/roles/{id}', 'RoleController@update')->name('roles.update');
 	});

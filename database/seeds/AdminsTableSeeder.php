@@ -40,6 +40,15 @@ class AdminsTableSeeder extends Seeder
 	        	Admin::create($vars);
 	        }
 
-	    DB::commit();
+		DB::commit();
+		
+		$this->assignSuperAdmin();
+	}
+	
+	private function assignSuperAdmin()
+    {
+        $admin = Admin::where('email', 'admin@admin.com')->first();
+
+        $admin->assignRole('superadmin');
     }
 }

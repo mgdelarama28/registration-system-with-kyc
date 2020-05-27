@@ -42,16 +42,6 @@ class User extends Authenticatable
     ];
 
     /** Renders */
-    public function renderFirstName()
-    {
-        return $this->first_name;
-    }
-
-    public function renderLastName()
-    {
-        return $this->last_name;
-    }
-
     public function renderFullName()
     {
         return $this->first_name . ' ' . $this->last_name;
@@ -59,17 +49,12 @@ class User extends Authenticatable
 
     public function renderProfilePicture()
     {
-        $path = 'storage/default_images/no_image.jpg';
+        $path = asset('storage/default_images/no-image.png');
 
         if ($this->profile_picture_path){
-            $path = 'storage/' . $this->profile_picture_path;
+            $path = asset('storage/' . $this->profile_picture_path);
         }
 
         return $path;
-    }
-
-    public function renderEmail()
-    {
-        return $this->email();
     }
 }

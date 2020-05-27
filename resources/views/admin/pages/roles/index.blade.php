@@ -10,8 +10,6 @@
 	            <div class="row mb-2">
 	                <div class="col-sm-6">
 	                    <h1 class="m-0 text-dark">Roles</h1>
-
-	                    <a href="{{ route('admin.roles.create') }}" class="btn btn-primary mt-2"><i class="nav-icon fa fa-plus"></i> Add Role</a>
 	                </div><!-- /.col -->
 	                
 	                <div class="col-sm-6">
@@ -55,7 +53,6 @@
 														<td>{{ $role->created_at }}</td>
 														<td>
 															<a href="{{ route('admin.roles.edit', $role->id) }}" class="btn btn-primary"><i class="far fa-edit"></i></a>
-															<a href="{{ route('admin.roles.destroy', $role->id) }}" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
 														</td>
 													</tr>
 						            			@endforeach
