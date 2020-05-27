@@ -48,7 +48,7 @@
 
 	                            			<tbody>
 	                            				<tr>
-	                            					<td>{{ dd($role) }}</td>
+	                            					<td></td>
 	                            					<td></td>
 	                            					<td></td>
 	                            					<td></td>

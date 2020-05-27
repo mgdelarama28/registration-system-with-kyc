@@ -2,14 +2,21 @@
 
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RolesTableSeeder extends Seeder
 {
-	protected $roles = [
-		[
-			'name' => 'Super Admin',
-		],
-	];
+    protected $roles = [
+        [
+            'name' => 'superadmin',
+            'guard_name' => 'admin',
+        ],
+        [
+            'name' => 'admin',
+            'guard_name' => 'admin',
+        ],
+    ];
+
     /**
      * Run the database seeds.
      *
@@ -17,14 +24,32 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach ($this->roles as $key => $role) {
-        	$vars = [
-        		'name' => $role['name'],
-        	];
+        foreach($this->roles as $key => $role):
+            $data = [
+                'name' => $role['name'],
+                'guard_name' => $role['guard_name'],
+            ];
 
-        	\DB::beginTransaction();
-        		Role::create($vars);
-        	\DB::commit();
-        }
+            $this->create($data);
+        endforeach;
+
+        $this->assignAllPermissions();
+    }
+
+    private function create($data)
+    {
+        \DB::beginTransaction();
+            Role::create($data);
+        \DB::commit();
+    }
+
+    private function assignAllPermissions()
+    {
+        $permissions = Permission::all();
+        $superadmin = Role::where('name', 'superadmin')->first();
+
+        foreach($permissions as $permission):
+            $superadmin->givePermissionTo($permission->name);
+        endforeach;
     }
 }
