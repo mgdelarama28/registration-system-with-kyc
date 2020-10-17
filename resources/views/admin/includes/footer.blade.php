@@ -4,4 +4,6 @@
 	</div>
 	
 	<strong>Copyright &copy; 2020 <a href="https://adminlte.io">MasterAdmin</a>.</strong> All rights reserved.
+
+	{{-- <a href=null>Logo source Logodesign.net</a> --}}
 </footer>
