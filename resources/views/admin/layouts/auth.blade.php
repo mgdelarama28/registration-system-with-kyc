@@ -10,7 +10,7 @@
 		
 		<div class="login-box mt-5">
 			<div class="login-logo">
-				<a href="#">{{ config('app.name') }}</a>	
+				<a class="font-weight-bold" href="#">{{ config('app.name') }}</a>	
 			</div>
 
 			<div class="login-box-body">

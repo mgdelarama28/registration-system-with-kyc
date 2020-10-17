@@ -5,9 +5,15 @@
 @section('content')
 	<p class="login-box-msg">Sign in to start your session</p>
 
+	@if ($errors->any())
+		<p class="text-danger text-center">
+			{{ $errors->first() }}
+		</p>
+	@endif
+
 	<form action="{{ route('admin.login') }}" method="POST">
-		{{-- {{ dd(route('login')) }} --}}
 		@csrf
+
 		<div class="form-group has-feedback">
 			<input type="email" class="form-control" name="email" placeholder="Email">
 			<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -30,6 +36,4 @@
 			</div>
 		</div>
 	</form>
-
-	<a href="#">I forgot my password</a><br>
 @endsection
